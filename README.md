@@ -21,7 +21,7 @@ We've coupled Vite with [TailwindCSS][tailwindcss] to provide a fast, modern, an
 
 Together, Bun and Vite provide a fast, modern, and easy to use development workflow for building Shopify Themes.
 
-Shopify's Dawn Theme v12.0.0 comes packed in this workflow by default. Visit the repo[shopify-dawn-theme] for more information on Dawn.
+Shopify's Dawn Theme v12.0.0 comes packed in this workflow by default. Visit the repo [shopify-dawn-theme] for more information on Dawn.
 
 This framework is compatible with ANY Shopify Theme.
 
