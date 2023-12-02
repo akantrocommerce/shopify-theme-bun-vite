@@ -7,7 +7,7 @@
 
 # Akantro Shopify Theme Framework 1.0
 
-![Bun](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/bun.png)
+<img src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/bun.png" alt="Bun" width="32" height="32" />
 ![Vite](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/vite.svg)
 ![JavaScript](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg)
 
