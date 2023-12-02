@@ -13,14 +13,14 @@
     alt="Bun"
     width="32"
     height="32"
-    style="padding-right: 5px;"
+    style="margin-right: 5px;"
   />
   <img
     src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/vite.svg"
     alt="Vite"
     width="32"
     height="32"
-    style="padding-right: 5px;"
+    style="margin-right: 5px;"
   />
   <img
     src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg"
