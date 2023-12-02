@@ -73,11 +73,25 @@ Akantro is a Shopify Partner.
 
 More details on Shopify CLI can be found [here][shopify-cli].
 
-## Install Project Dependencies
+## Theme setup
 
-`bun install`
+- If you're not using Dawn, you may place your custom theme files in the `/theme` directory.
+  - You must follow the Shopify Theme file structure:
+    /theme
+    /assets
+    /config
+    /layout
+    /locales
+    /sections
+    /snippets
+    /templates
+- Install the Theme Access app from the Shopify App Store.
+- Generate a private key for the Theme Access app.
+- Configure your `shopify.theme.toml` file with your theme ID, store name, and password.
+- Login to your Shopify store using the Shopify CLI.
+  - For your first run, you may decide to run `shopify theme dev -e development` to start the development server and ensure you're logged into the correct store. Close the process in your terminal once you've confirmed you're logged into the correct store.
 
-## Set up your shopify.theme.toml file
+## Example shopify.theme.toml file
 
 ```
 [environments.development]
@@ -104,6 +118,10 @@ ignore = [
 ]
 output = "json"
 ```
+
+## Install Project Dependencies
+
+`bun install`
 
 ## Start
 
