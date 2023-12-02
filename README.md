@@ -9,8 +9,10 @@
 
 <center>
   <img src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/bun.png" alt="Bun" width="32" height="32" />
-  ![Vite](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/vite.svg)
-  ![JavaScript](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg)
+
+![Vite](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/vite.svg)
+![JavaScript](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg)
+
 </center>
 
 Visit [akantro.com][akantro] to follow for updates.
