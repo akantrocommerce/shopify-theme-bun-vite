@@ -3,6 +3,7 @@
 [vite]: https://vitejs.dev
 [tailwindcss]: https://tailwindcss.com
 [shopify-cli]: https://shopify.dev/themes/tools/cli
+[shopify-dawn-theme]: https://github.com/Shopify/dawn
 
 # Akantro Shopify Theme Framework 1.0
 
@@ -20,6 +21,10 @@ We've coupled Vite with [TailwindCSS][tailwindcss] to provide a fast, modern, an
 
 Together, Bun and Vite provide a fast, modern, and easy to use development workflow for building Shopify Themes.
 
+Shopify's Dawn Theme v12.0.0 comes packed in this workflow by default. Visit the repo[shopify-dawn-theme] for more information on Dawn.
+
+This framework is compatible with ANY Shopify Theme.
+
 [Akantro][akantro] is a digital product design and development agency dedicated to helping Shopify merchants enhance their success. Specializing in cutting-edge technologies like AI, serverless, headless, and composable tech. Founded by an industry expert, the agency provides customized digital solutions, including UX/UI design, storefront development, app development, and more.
 
 Akantro is a Shopify Partner.
@@ -35,7 +40,8 @@ Akantro is a Shopify Partner.
 - Sass
 - PostCSS
 - Autoprefixer
-- Works with ANY Shopify Theme
+- Packaged w/ Dawn Theme v12.0.0
+- Compatible with ANY Shopify Theme
 
 ## Install Bun
 
