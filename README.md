@@ -7,28 +7,24 @@
 
 # Akantro Shopify Theme Framework 1.0
 
-<div style="display:flex;width:100%;padding-bottom:5px;">
-  <img
-    src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/bun.png"
-    alt="Bun"
-    width="32"
-    height="32"
-    style="margin-right: 5px;"
-  />
-  <img
-    src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/vite.svg"
-    alt="Vite"
-    width="32"
-    height="32"
-    style="margin-right: 5px;"
-  />
-  <img
-    src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg"
-    alt="JavaScript"
-    width="32"
-    height="32"
-  />
-</div>
+<img
+  src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/bun.png"
+  alt="Bun"
+  width="32"
+  height="32"
+/>
+<img
+  src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/vite.svg"
+  alt="Vite"
+  width="32"
+  height="32"
+/>
+<img
+  src="https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg"
+  alt="JavaScript"
+  width="32"
+  height="32"
+/>
 
 Visit [akantro.com][akantro] to follow for updates.
 
