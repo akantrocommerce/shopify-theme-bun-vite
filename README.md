@@ -1,4 +1,12 @@
-# Akantro Shopify Theme Framework
+[akantro]: https://www.akantro.com
+
+# Akantro Shopify Theme Framework 1.0
+
+Visit [akantro.com][akantro] to follow for updates.
+
+## About
+
+Akantro Shopify Theme Framework is a Shopify Theme development workflow built on top of Bun and Vite. It is designed to be a lightweight, fast, and easy to use framework for building Shopify Themes. It is built to work with any Shopify Theme.
 
 ## Features
 
@@ -26,7 +34,7 @@
 
 `bun install`
 
-## Set up your shopify.theme.toml
+## Set up your shopify.theme.toml file
 
 ```
 [environments.development]
@@ -60,7 +68,7 @@ output = "json"
 
 ## Build
 
-``bun run build`
+`bun run build`
 
 ## Push
 
