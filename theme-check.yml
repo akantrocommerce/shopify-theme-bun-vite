@@ -1,0 +1,10 @@
+# Path: theme-check.yml
+root: theme
+
+MatchingTranslations:
+  enabled: true
+
+TemplateLength:
+  enabled: true
+  severity: suggestion
+  max: 1000

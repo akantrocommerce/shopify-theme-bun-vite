@@ -1,0 +1,28 @@
+{
+  "name": "shopify-theme",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "bun run workflow/orchestrate.js",
+    "server": "bunx --bun vite",
+    "build": "bun vite build",
+    "dev": "shopify theme dev -e development",
+    "pull": "shopify theme pull -e development",
+    "push": "shopify theme push -e development"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "vite": "^5.0.2",
+    "vite-plugin-sass": "^0.1.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "bun": "^1.0.12",
+    "bunx": "^0.1.0",
+    "postcss": "^8.4.31",
+    "postcss-clean": "^1.2.2",
+    "postcss-sass": "^0.5.0",
+    "tailwindcss": "^3.3.5"
+  }
+}

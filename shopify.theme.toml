@@ -1,0 +1,23 @@
+[environments.development]
+theme = "{theme_id}"
+store = "{store_name}.myshopify.com"
+password  = "{password}"
+path = "./dist"
+output = "json"
+host = "localhost"
+ignore = [
+  "config/settings_data.json",
+  "**/*.json"
+]
+live-reload = "off"
+
+[environments.production]
+theme = "{theme_id}"
+store = "{store_name}.myshopify.com"
+password  = "{password}"
+path = "./dist"
+ignore = [
+  "config/settings_data.json",
+  "**/*.json"
+]
+output = "json"
