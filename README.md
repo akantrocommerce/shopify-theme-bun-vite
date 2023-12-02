@@ -7,6 +7,10 @@
 
 # Akantro Shopify Theme Framework 1.0
 
+![Bun](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/bun.png)
+![Vite](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg)
+![JavaScript](https://github.com/akantrocommerce/shopify-theme-bun-vite/blob/main/workflow/assets/javascript.svg)
+
 Visit [akantro.com][akantro] to follow for updates.
 
 ## About
