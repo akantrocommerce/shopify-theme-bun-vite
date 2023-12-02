@@ -16,6 +16,8 @@ Akantro Shopify Theme Framework is a Shopify Theme development workflow built on
 
 [Vite][vite] is a build tool designed to enhance the development experience for modern web projects. It comprises a fast development server with features like Hot Module Replacement (HMR) and a build command that uses Rollup to create optimized static assets for production. Vite comes with opinionated defaults but allows customization through Plugins and a Config Section. It is highly extensible, offering a Plugin API and JavaScript API with typing support. For further details, the Features Guide and Why Vite sections provide additional information.
 
+We've coupled Vite with [TailwindCSS][tailwindcss] to provide a fast, modern, and easy to use development workflow for building Shopify Themes.
+
 Together, Bun and Vite provide a fast, modern, and easy to use development workflow for building Shopify Themes.
 
 [Akantro][akantro] is a digital product design and development agency dedicated to helping Shopify merchants enhance their success. Specializing in cutting-edge technologies like AI, serverless, headless, and composable tech. Founded by an industry expert, the agency provides customized digital solutions, including UX/UI design, storefront development, app development, and more.
@@ -26,7 +28,7 @@ Akantro is a Shopify Partner.
 
 - Bun
 - Vite
-- [TailwindCSS][tailwindcss]
+- TailwindCSS
 - Live Reload
 - Shopify CLI
 - JS Modules
