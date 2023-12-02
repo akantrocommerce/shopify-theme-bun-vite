@@ -78,14 +78,14 @@ More details on Shopify CLI can be found [here][shopify-cli].
 - If you're not using Dawn, you may place your custom theme files in the `/theme` directory.
   - You must follow the Shopify Theme file structure:
   ```
-    /theme
-      ├── /assets
-      ├── /config
-      ├── /layout
-      ├── /locales
-      ├── /sections
-      ├── /snippets
-      └── /templates
+    theme
+      ├── assets
+      ├── config
+      ├── layout
+      ├── locales
+      ├── sections
+      ├── snippets
+      └── templates
   ```
 - Install the Theme Access app from the Shopify App Store.
 - Generate a private key for the Theme Access app.
