@@ -87,11 +87,21 @@ More details on Shopify CLI can be found [here][shopify-cli].
       ├── snippets
       └── templates
   ```
+- Install the site-wide scripts and styles in your `theme.liquid` file:
+
+  ```
+    {% comment %} Theme index.js {% endcomment %}
+    <script src="{{ 'index.js' | asset_url }}" defer="defer"></script>
+
+    {% comment %} Theme index.css {% endcomment %}
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+  ```
+
 - Install the Theme Access app from the Shopify App Store.
 - Generate a private key for the Theme Access app.
 - Configure your `shopify.theme.toml` file with your theme ID, store name, and password.
 - Login to your Shopify store using the Shopify CLI.
-  - For your first run, you may decide to run `shopify theme dev -e development` to start the development server and ensure you're logged into the correct store. Close the process in your terminal once you've confirmed you're logged into the correct store.
+- When you set up a store, run `shopify theme list -e development` to ensure that your theme and environment are set up correctly.
 
 ## Example shopify.theme.toml file
 
