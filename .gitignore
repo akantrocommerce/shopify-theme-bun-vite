@@ -23,3 +23,8 @@ shopify.theme.toml
 *.njsproj
 *.sln
 *.sw?
+
+# Security
+*.key
+*.pem
+*.crt

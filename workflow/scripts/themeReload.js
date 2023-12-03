@@ -49,4 +49,6 @@ async function startWebSocket() {
   }
 }
 
-startWebSocket();
+if (window.Shopify.theme.role === 'unpublished') {
+  startWebSocket();
+}
