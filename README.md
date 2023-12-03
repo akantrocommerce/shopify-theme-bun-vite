@@ -146,3 +146,18 @@ output = "json"
 ## Push
 
 `bun run push`
+
+--- Dev Notes ---
+
+## SSL
+
+Generate SSL cert to your project root:
+
+`openssl genrsa -out key.pem 2048`
+`openssl req -new -x509 -key key.pem -out cert.pem -days 365`
+
+## Configure Vite SSL with Bun
+
+BLOCKED: https://github.com/oven-sh/bun/issues/887
+
+Check back in a week or so...

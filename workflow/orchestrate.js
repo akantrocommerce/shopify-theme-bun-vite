@@ -37,6 +37,10 @@ async function buildTheme() {
       'workflow/scripts/**/',
     ],
     server: {
+      https: {
+        key: '../key.pem', // Adjust the path as needed
+        cert: '../cert.pem', // Adjust the path as needed
+      },
       ws: true,
       watch: {
         include: ['theme/**/*', 'scripts/**/*', 'styles/**/*'],

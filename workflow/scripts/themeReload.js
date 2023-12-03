@@ -1,7 +1,7 @@
 // themeReload.js
 async function initWebSocket() {
   return new Promise((resolve, reject) => {
-    const socket = new WebSocket('ws://localhost:5173');
+    const socket = new WebSocket('wss://localhost:5173');
 
     socket.addEventListener('open', () => {
       console.log('WebSocket connection opened.');
@@ -49,6 +49,9 @@ async function startWebSocket() {
   }
 }
 
-if (window.Shopify.theme.role === 'unpublished') {
+if (
+  typeof window.Shopify !== 'undefined' &&
+  window.Shopify.theme.role === 'unpublished'
+) {
   startWebSocket();
 }
