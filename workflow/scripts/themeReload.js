@@ -14,9 +14,18 @@ async function initWebSocket() {
     });
 
     socket.addEventListener('close', (event) => {
-      console.log('WebSocket connection closed. Code:', event.code, 'Reason:', event.reason);
+      console.log(
+        'WebSocket connection closed. Code:',
+        event.code,
+        'Reason:',
+        event.reason
+      );
       // You can add logic here to attempt reconnection if needed
-      reject(new Error(`WebSocket connection closed. Code: ${event.code}, Reason: ${event.reason}`));
+      reject(
+        new Error(
+          `WebSocket connection closed. Code: ${event.code}, Reason: ${event.reason}`
+        )
+      );
     });
   });
 }

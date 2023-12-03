@@ -1,3 +1,3 @@
-const hello  = `Engineered by Akantro 🚀 https://www.akantro.com`
+const hello = `Engineered by Akantro 🚀 https://www.akantro.com`;
 
-export default hello
+export default hello;

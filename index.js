@@ -1,11 +1,11 @@
-import './style.css' // entry point that loads all the css files update ok
-import './scripts/scripts.js' // entry point that loads all the js files now?
-import './workflow/scripts/scripts.js' // entry point that loads all the js files now?
+import './style.css'; // entry point that loads all the css files update ok
+import './scripts/scripts.js'; // entry point that loads all the js files now?
+import './workflow/scripts/scripts.js'; // entry point that loads all the js files now?
 
 // welcome page content
-import javascriptLogo from './workflow/assets/javascript.svg'
-import viteLogo from './workflow/assets/vite.svg'
-import bunLogo from './workflow/assets/bun.png'
+import javascriptLogo from './workflow/assets/javascript.svg';
+import viteLogo from './workflow/assets/vite.svg';
+import bunLogo from './workflow/assets/bun.png';
 
 const app = document.querySelector('#app');
 

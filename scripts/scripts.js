@@ -1,1 +1,1 @@
-import './global/hello.js'
+import './global/hello.js';

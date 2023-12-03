@@ -14,12 +14,17 @@
   "devDependencies": {
     "sass": "^1.69.5",
     "vite": "^5.0.2",
-    "vite-plugin-sass": "^0.1.0"
+    "vite-plugin-sass": "^0.1.0",
+    "prettier": "^3.1.0"
   },
   "dependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.0.2",
     "autoprefixer": "^10.4.16",
     "bun": "^1.0.12",
     "bunx": "^0.1.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "postcss": "^8.4.31",
     "postcss-clean": "^1.2.2",
     "postcss-sass": "^0.5.0",

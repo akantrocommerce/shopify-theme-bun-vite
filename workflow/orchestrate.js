@@ -15,7 +15,8 @@ const consoleLog = {
   pushInProgress: '[akantro] 🚀 Pushing theme...',
   pushCompleted: '[akantro] 🚀 Push completed...',
   viteStarting: '[akantro] 🚀 Starting Vite server...',
-  viteListening: '[akantro] 🚀 Vite server listening @ http://localhost:5173/...',
+  viteListening:
+    '[akantro] 🚀 Vite server listening @ http://localhost:5173/...',
   socketEstablished: '[akantro] 🚀 WebSocket connection established...',
   socketEmit: '[akantro] 🚀 WebSocket emit refresh...',
   browserOpen: '[akantro] 🚀 Opening theme in browser...',
@@ -29,7 +30,12 @@ async function buildTheme() {
     root: path.resolve(__dirname, '../'),
     publicDir: 'theme',
     plugins: [vitePluginSass()],
-    assets: ['theme/**/*', 'scripts/**/*', 'styles/**/*', 'workflow/scripts/**/'],
+    assets: [
+      'theme/**/*',
+      'scripts/**/*',
+      'styles/**/*',
+      'workflow/scripts/**/',
+    ],
     server: {
       ws: true,
       watch: {
@@ -44,7 +50,6 @@ async function buildTheme() {
         },
         output: {
           dir: 'dist',
-          emptyOutDir: true,
           entryFileNames: `assets/[name].js`,
           chunkFileNames: `assets/[name].js`,
           assetFileNames: `assets/[name].[ext]`,
