@@ -8,7 +8,4 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
   },
-  rules: {
-    'prettier/prettier': ['error', { singleQuote: true }],
-  },
 };

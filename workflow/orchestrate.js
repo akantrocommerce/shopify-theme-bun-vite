@@ -1,25 +1,24 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { createServer, build } from 'vite';
-import vitePluginSass from 'vite-plugin-sass';
-import WebSocket from 'ws';
+import path from "path";
+import { fileURLToPath } from "url";
+import { createServer, build } from "vite";
+import vitePluginSass from "vite-plugin-sass";
+import WebSocket from "ws";
 
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const command = {
-  open: ['shopify', 'theme', 'open', '-e', 'development'],
-  push: ['shopify', 'theme', 'push', '-e', 'development'],
+  open: ["shopify", "theme", "open", "-e", "development"],
+  push: ["shopify", "theme", "push", "-e", "development"],
 };
 const consoleLog = {
-  buildStart: '[akantro] 🚀 Build starting...',
-  buildCompleted: '[akantro] 🚀 Build completed...',
-  pushInProgress: '[akantro] 🚀 Pushing theme...',
-  pushCompleted: '[akantro] 🚀 Push completed...',
-  viteStarting: '[akantro] 🚀 Starting Vite server...',
+  buildStart: "[akantro] 🚀 Build starting...",
+  buildCompleted: "[akantro] 🚀 Build completed...",
+  pushInProgress: "[akantro] 🚀 Pushing theme...",
+  pushCompleted: "[akantro] 🚀 Push completed...",
+  viteStarting: "[akantro] 🚀 Starting Vite server...",
   viteListening:
-    '[akantro] 🚀 Vite server listening @ http://localhost:5173/...',
-  socketEstablished: '[akantro] 🚀 WebSocket connection established...',
-  socketEmit: '[akantro] 🚀 WebSocket emit refresh...',
-  browserOpen: '[akantro] 🚀 Opening theme in browser...',
+    "[akantro] 🚀 Vite server listening @ http://localhost:5173/...",
+  socketEmit: "[akantro] 🚀 Theme refreshed...",
+  browserOpen: "[akantro] 🚀 Opening theme in browser...",
   changeDetected: (path) => `[akantro] 🚀 Detected change in: ${path}`,
 };
 
@@ -27,20 +26,20 @@ async function buildTheme() {
   // Step 1: Build the theme with Vite
   const viteConfig = {
     clearScreen: false,
-    root: path.resolve(__dirname, '../'),
-    publicDir: 'theme',
+    root: path.resolve(__dirname, "../"),
+    publicDir: "theme",
     plugins: [vitePluginSass()],
     assets: [
-      'theme/**/*',
-      'scripts/**/*',
-      'styles/**/*',
-      'workflow/scripts/**/',
+      "theme/**/*",
+      "scripts/**/*",
+      "styles/**/*",
+      "workflow/scripts/**/",
     ],
     server: {
       ws: true,
       watch: {
-        include: ['theme/**/*', 'scripts/**/*', 'styles/**/*'],
-        exclude: ['dist/**', 'node_modules/**'],
+        include: ["theme/**/*", "scripts/**/*", "styles/**/*"],
+        exclude: ["dist/**", "node_modules/**"],
       },
     },
     build: {
@@ -49,7 +48,7 @@ async function buildTheme() {
           html: false,
         },
         output: {
-          dir: 'dist',
+          dir: "dist",
           entryFileNames: `assets/[name].js`,
           chunkFileNames: `assets/[name].js`,
           assetFileNames: `assets/[name].[ext]`,
@@ -59,34 +58,30 @@ async function buildTheme() {
   };
 
   // Build starting
-  console.log(`${consoleLog.buildStart}`);
+  console.info(`${consoleLog.buildStart}`);
   // Step 2: Push the theme with Shopify CLI API
   await build(viteConfig).then(async () => {
     // Build completed
-    console.log(`${consoleLog.buildCompleted}`);
+    console.info(`${consoleLog.buildCompleted}`);
     // Push the theme
-    console.log(`${consoleLog.pushInProgress}`);
+    console.info(`${consoleLog.pushInProgress}`);
     shopifyThemePush: await Bun.spawn(command.push, {
-      cwd: path.resolve(__dirname, '../'),
-      stdio: ['inherit'],
+      cwd: path.resolve(__dirname, "../"),
+      stdio: ["inherit"],
       async onExit(shopifyThemePush, exitCode, signalCode, error) {
-        console.log(`${consoleLog.pushCompleted}`);
+        console.info(`${consoleLog.pushCompleted}`);
         // Step 3: Start Vite server
-        console.log(`${consoleLog.viteStarting}`);
+        console.info(`${consoleLog.viteStarting}`);
         const server = await createServer(viteConfig);
-        console.log(`${consoleLog.viteListening}`);
+        console.info(`${consoleLog.viteListening}`);
 
         // Create a WebSocket server
         const wss = new WebSocket.Server({ noServer: true });
 
-        wss.on('connection', (socket) => {
-          console.log(`${consoleLog.socketEstablished}`);
-        });
-
         // Associate the WebSocket server with the Vite server
-        server.httpServer.on('upgrade', (request, socket, head) => {
+        server.httpServer.on("upgrade", (request, socket, head) => {
           wss.handleUpgrade(request, socket, head, (ws) => {
-            wss.emit('connection', ws, request);
+            wss.emit("connection", ws, request);
           });
         });
 
@@ -95,34 +90,34 @@ async function buildTheme() {
 
         // Step 4: Open theme in browser
         shopifyThemeOpen: await Bun.spawn(command.open, {
-          cwd: path.resolve(__dirname, '../'),
-          stdio: ['inherit'],
+          cwd: path.resolve(__dirname, "../"),
+          stdio: ["inherit"],
           async onExit(shopifyThemeOpen, exitCode, signalCode, error) {
-            console.log(`${consoleLog.browserOpen}`);
+            console.info(`${consoleLog.browserOpen}`);
           },
         });
         // Step 5: Watch for changes in public, scripts, and styles
-        server.watcher.on('change', async (filePath) => {
-          if (!filePath.includes('dist' || 'node_modules')) {
-            console.log(consoleLog.changeDetected(filePath));
+        server.watcher.on("change", async (filePath) => {
+          if (!filePath.includes("dist" || "node_modules")) {
+            console.info(consoleLog.changeDetected(filePath));
             // Step 6: Shopify theme build
-            console.log(`${consoleLog.buildStart}`);
+            console.info(`${consoleLog.buildStart}`);
             await build(viteConfig).then(async () => {
-              console.log(`${consoleLog.buildCompleted}`);
+              console.info(`${consoleLog.buildCompleted}`);
             });
             // Step 7: Shopify theme push
-            console.log(`${consoleLog.pushInProgress}`);
+            console.info(`${consoleLog.pushInProgress}`);
             shopifyThemePush: await Bun.spawn(command.push, {
-              cwd: path.resolve(__dirname, '../'),
-              stdio: ['inherit'],
+              cwd: path.resolve(__dirname, "../"),
+              stdio: ["inherit"],
               async onExit(shopifyThemePush, exitCode, signalCode, error) {
-                console.log(`${consoleLog.pushCompleted}`);
+                console.info(`${consoleLog.pushCompleted}`);
                 // Step 8: Reload theme when push is completed
-                console.log(`${consoleLog.socketEmit}`);
+                console.info(`${consoleLog.socketEmit}`);
                 // Vite server send notification to the theme script to reload
                 wss.clients.forEach((client) => {
                   if (client.readyState === WebSocket.OPEN) {
-                    client.send('reloadTheme');
+                    client.send("reloadTheme");
                   }
                 });
               },
@@ -137,5 +132,5 @@ async function buildTheme() {
 
 // Step 10: Error handling
 buildTheme().catch((error) => {
-  console.error('An error occurred:', error);
+  console.error("[akantro] An error occurred, see output:", error);
 });
